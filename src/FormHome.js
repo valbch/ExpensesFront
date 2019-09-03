@@ -1,21 +1,6 @@
 import React from "react";
-// import axios from "axios";
 
-// axios({
-//   method: "post",
-//   url: "url",
-//   data: mesDonnees
-// })
-//   .then(function(reponse) {
-//     //On traite la suite une fois la réponse obtenue
-//     console.log(reponse);
-//   })
-//   .catch(function(erreur) {
-//     //On traite ici les erreurs éventuellement survenues
-//     console.log(erreur);
-//   });
-
-class New extends React.Component {
+class FormHome extends React.Component {
   state = {
     name: "Name",
     description: "Description",
@@ -23,9 +8,10 @@ class New extends React.Component {
   };
   render = () => {
     return (
-      <div className="Case">
+      <div className="CaseHome">
         <h2 className="Title">New expense</h2>
         <form className="Form">
+          <input disabled className="Input" placeholder="New user" />
           <input
             className="Input"
             placeholder="Name"
@@ -67,4 +53,5 @@ class New extends React.Component {
     );
   };
 }
-export default New;
+
+export default FormHome;
