@@ -1,15 +1,16 @@
 import React from "react";
 import Users from "./Users";
 import Expenses from "./Expenses";
-import New from "./New";
+// import FormHome from "./FormHome";
 
 class PageExpenses extends React.Component {
   render = () => {
     return (
-      <div className="Global">
+      <div className="Container">
         <Users />
         <Expenses />
-        <New />
+        {/* <FormHome /> */}
+        {/* <New /> */}
       </div>
     );
   };

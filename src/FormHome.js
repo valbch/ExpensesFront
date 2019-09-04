@@ -1,10 +1,12 @@
 import React from "react";
+import PageExpenses from "./PageExpenses";
 
 class FormHome extends React.Component {
   state = {
     name: "Name",
     description: "Description",
-    amount: "Amount"
+    amount: "Amount",
+    page: "FormHome"
   };
   render = () => {
     return (
@@ -45,10 +47,18 @@ class FormHome extends React.Component {
               this.setState({ name: null, description: null, amount: null });
             }}
           />
-          <button className="Button" type="submit" value="validé" onClick="">
-            ADD EXPENSE
-          </button>
+          <div>
+            <span
+              className="ButtonAdd"
+              //   type="submit"
+              //   value="validé"
+              onClick={() => this.setState({ page: "pageexpenses" })}
+            >
+              > ADD EXPENSE
+            </span>
+          </div>
         </form>
+        <div>{this.state.page === "pageexpenses" && <PageExpenses />}</div>
       </div>
     );
   };
