@@ -1,5 +1,10 @@
 import React from "react";
 import PageExpenses from "./PageExpenses";
+import axios from "axios";
+
+// problèmes à regler:
+// le onrefresh ne fonctionne pas
+// css du bouton
 
 class FormHome extends React.Component {
   state = {
@@ -8,11 +13,26 @@ class FormHome extends React.Component {
     amount: "Amount",
     page: "FormHome"
   };
+
+  addExpense = async () => {
+    const response = await axios.post(
+      "http://localhost:3000/create",
+      this.state
+    );
+
+    this.setState({
+      name: response.data.name,
+      description: response.data.description,
+      amount: response.data.amount,
+      page: "pageexpenses"
+    });
+  };
+
   render = () => {
     return (
       <div className="CaseHome">
         <h2 className="Title">New expense</h2>
-        <form className="Form">
+        <form onSubmit={this.onSubmit} className="Form">
           <input disabled className="Input" placeholder="New user" />
           <input
             className="Input"
@@ -43,22 +63,23 @@ class FormHome extends React.Component {
             onChange={event => {
               this.setState({ amount: event.target.value });
             }}
-            onRefresh={() => {
-              this.setState({ name: null, description: null, amount: null });
-            }}
           />
           <div>
             <span
               className="ButtonAdd"
-              //   type="submit"
+              type="submit"
               //   value="validé"
-              onClick={() => this.setState({ page: "pageexpenses" })}
+              onClick={() => this.addExpense()}
+              onRefresh={() => {
+                this.setState({ name: null, description: null, amount: null });
+              }}
             >
-              > ADD EXPENSE
+              ADD EXPENSE
             </span>
           </div>
+
+          <div>{this.state.page === "pageexpenses" && <PageExpenses />}</div>
         </form>
-        <div>{this.state.page === "pageexpenses" && <PageExpenses />}</div>
       </div>
     );
   };
