@@ -30,56 +30,63 @@ class FormHome extends React.Component {
 
   render = () => {
     return (
-      <div className="CaseHome">
-        <h2 className="Title">New expense</h2>
-        <form onSubmit={this.onSubmit} className="Form">
-          <input disabled className="Input" placeholder="New user" />
-          <input
-            className="Input"
-            placeholder="Name"
-            value={this.state.name}
-            onChange={event => {
-              this.setState({ name: event.target.value });
-            }}
-            onRefresh={() => {
-              this.setState({ name: null, description: null, amount: null });
-            }}
-          />
-          <input
-            className="Input"
-            placeholder="Description"
-            value={this.state.description}
-            onChange={event => {
-              this.setState({ description: event.target.value });
-            }}
-            onRefresh={() => {
-              this.setState({ name: null, description: null, amount: null });
-            }}
-          />
-          <input
-            className="Input"
-            placeholder="Amount"
-            value={this.state.amount}
-            onChange={event => {
-              this.setState({ amount: event.target.value });
-            }}
-          />
-          <div>
-            <span
-              className="ButtonAdd"
-              type="submit"
-              //   value="validé"
-              onClick={() => this.addExpense()}
+      <div>
+        <div className="CaseHome">
+          <h2 className="Title">New expense</h2>
+          <form onSubmit={this.onSubmit} className="Form">
+            <input disabled className="Input" placeholder="New user" />
+            <input
+              className="Input"
+              placeholder="Name"
+              maxlength={15}
+              value={this.state.name}
+              onChange={event => {
+                this.setState({ name: event.target.value });
+              }}
               onRefresh={() => {
                 this.setState({ name: null, description: null, amount: null });
               }}
-            >
-              ADD EXPENSE
-            </span>
-          </div>
-
-          <div>{this.state.page === "pageexpenses" && <PageExpenses />}</div>
-        </form>
+            />
+            <input
+              className="Input"
+              placeholder="Description"
+              maxlength={25}
+              value={this.state.description}
+              onChange={event => {
+                this.setState({ description: event.target.value });
+              }}
+              onRefresh={() => {
+                this.setState({ name: null, description: null, amount: null });
+              }}
+            />
+            <input
+              className="Input"
+              placeholder="Amount"
+              value={this.state.amount}
+              onChange={event => {
+                this.setState({ amount: event.target.value });
+              }}
+            />
+            <div>
+              <span
+                className="ButtonAdd"
+                type="submit"
+                //   value="validé"
+                onClick={() => this.addExpense()}
+                onRefresh={() => {
+                  this.setState({
+                    name: null,
+                    description: null,
+                    amount: null
+                  });
+                }}
+              >
+                ADD EXPENSE
+              </span>
+            </div>
+          </form>
+        </div>
+        <div>{this.state.page === "pageexpenses" && <PageExpenses />}</div>
       </div>
     );
   };

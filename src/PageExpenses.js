@@ -1,7 +1,7 @@
 import React from "react";
 import Users from "./Users";
 import Expenses from "./Expenses";
-// import FormHome from "./FormHome";
+import FormHome from "./FormHome";
 
 class PageExpenses extends React.Component {
   render = () => {
@@ -9,8 +9,7 @@ class PageExpenses extends React.Component {
       <div className="Container">
         <Users />
         <Expenses />
-        {/* <FormHome /> */}
-        {/* <New /> */}
+        <FormHome />
       </div>
     );
   };

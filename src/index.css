@@ -17,18 +17,22 @@ body {
 
 .Container {
   display: flex;
-  /* flex-direction: row; */
+  justify-content: flex-end;
+  background: green;
+  flex-direction: row;
   color: #5b49d3;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 0 20px;
   margin-top: 60px;
   /* align-items: stretch; */
   /* padding-bottom: 70px; */
 }
 .CaseHome {
+  margin-top: 15px;
   border-radius: 5px;
   width: 800px;
-  background: #fcfcfc;
+  /* background: #fcfcfc; */
+  background: darkkhaki;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -38,6 +42,7 @@ body {
 }
 .Title {
   color: #5b49d3;
+  background: red;
 }
 .Form {
   display: flex;
@@ -47,8 +52,10 @@ body {
 
 .Case {
   border-radius: 5px;
+
   width: 800px;
-  background: #fcfcfc;
+  /* background: #fcfcfc; */
+  background: yellow;
   margin: 15px 15px;
   display: flex;
   flex-direction: column;
@@ -56,14 +63,15 @@ body {
   cursor: pointer;
   text-align: center;
 }
-.Title h2 {
+/* .Title h2 {
   /* margin-block-start: 0.67em;
   margin-block-end: 0.67em; */
-  /* display: block; */
-  display: flex;
+/* display: block; */
+/* display: flex;
   /* justify-content: center; */
-  text-align: center;
-}
+/* text-align: center;
+  background: greenyellow;  */
+/* }  */
 
 .Input {
   margin: 10px;
@@ -82,17 +90,20 @@ body {
   text-align: center;
   justify-content: center; */
 }
+/* stp*/
 .ContainUser {
   display: flex;
-  flex-direction: row;
+  background: cornflowerblue;
+  /* flex-direction: row; */
   align-items: center;
   justify-content: space-between;
   margin-left: 35px;
   margin-right: 35px;
   border-radius: 4px;
-  position: relative;
+  /* position: relative; */
 }
 .ContainExpense {
+  background: purple;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,14 +113,40 @@ body {
   border-radius: 4px;
   position: relative;
 }
-.Operation {
+/* .Operation {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background: #f7f7f7;
+  /* align-items: center;
+  justify-content: space-between; */
+/* background: #f7f7f7; */
+/* background: pink;
   padding: 5px;
   margin-left: 30px;
   margin-right: 30px;
   border-radius: 4px;
+} */
+/* }
+.Text {
+  background: aqua;
+} */
+
+.Info {
+  display: flex;
+  list-style-type: none;
+  /* display: inline; */
+  /* position: absolute; */
+  margin: 0;
+  padding: 0;
+  background: tomato;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 35px;
+  margin-right: 35px;
+  border-radius: 4px;
+}
+.lignTotal {
+  margin-left: 35px;
+  margin-right: 35px;
+  display: flex;
+  justify-content: space-between;
 }
