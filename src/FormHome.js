@@ -5,13 +5,14 @@ import axios from "axios";
 // problèmes à regler:
 // le onrefresh ne fonctionne pas
 // css du bouton
+// const refresh = document.getElementByld();
 
 class FormHome extends React.Component {
   state = {
-    name: "Name",
-    description: "Description",
-    amount: "Amount",
-    page: "FormHome"
+    name: "",
+    description: "",
+    amount: "",
+    page: ""
   };
 
   addExpense = async () => {
@@ -34,18 +35,24 @@ class FormHome extends React.Component {
         <div className="CaseHome">
           <h2 className="Title">New expense</h2>
           <form onSubmit={this.onSubmit} className="Form">
-            <input disabled className="Input" placeholder="New user" />
+            <input className="Input" placeholder="New user" />
+
             <input
               className="Input"
               placeholder="Name"
               maxlength={15}
               value={this.state.name}
+              // faire un find {this.state.name === item.name ? <p>{item.name}</p> : null};
+              // {alert(
+              //   "Vous êtes déjà inscrit. Merci de sélectionnez votre nom dans New user 😉"
+              // )}
+
               onChange={event => {
                 this.setState({ name: event.target.value });
               }}
-              onRefresh={() => {
-                this.setState({ name: null, description: null, amount: null });
-              }}
+              // onRefresh={() => {
+              //   this.setState({ name: null, description: null, amount: null });
+              // }}
             />
             <input
               className="Input"
@@ -55,9 +62,9 @@ class FormHome extends React.Component {
               onChange={event => {
                 this.setState({ description: event.target.value });
               }}
-              onRefresh={() => {
-                this.setState({ name: null, description: null, amount: null });
-              }}
+              // onRefresh={() => {
+              //   this.setState({ name: null, description: null, amount: null });
+              // }}
             />
             <input
               className="Input"

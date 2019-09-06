@@ -3,7 +3,7 @@ import axios from "axios";
 
 class Expenses extends React.Component {
   state = {
-    name: "Mary",
+    name: "",
     description: "",
     data: null
   };
@@ -33,21 +33,31 @@ class Expenses extends React.Component {
 
           {this.state.data &&
             this.state.data.map((item, index) => {
-              // return this.state.users === item.users ? (
-              //   <p>{item.name}</p>
-              // ) : null;
               return (
                 <div key={index} className="Info">
                   <p>{item.name} </p>
                   <p>{item.description}</p>
-                  <div>{item.amount}€</div>
+                  <div>
+                    {new Intl.NumberFormat("de-DE", {
+                      style: "currency",
+                      currency: "EUR"
+                    }).format(item.amount)}{" "}
+                  </div>
                 </div>
               );
             })}
         </div>
         <div className="lignTotal">
           <p>TOTAL</p>
-          <p>0</p>
+
+          {/* {this.state.data &&
+            this.state.data.map((item, index) => {
+              return (
+                <div key={index}>
+                  <div>{(sum = sum + item.amount)}</div>
+                </div>
+              );
+            })} */}
         </div>
       </div>
     );

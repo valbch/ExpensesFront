@@ -1,5 +1,6 @@
 import React from "react";
 import FormHome from "./FormHome";
+import PageExpenses from "./PageExpenses";
 // import Users from "./Users";
 // import Expenses from "./Expenses";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -21,10 +22,14 @@ import FormHome from "./FormHome";
 // => retirer le place holder quand on ecrit
 
 class App extends React.Component {
+  state = {
+    name: ""
+  };
   render = () => {
     return (
       <div>
-        <FormHome />
+        {/* <FormHome /> */}
+        {this.state.name === "" ? <FormHome /> : <PageExpenses />}
       </div>
     );
   };

@@ -39,7 +39,12 @@ class Users extends React.Component {
               return (
                 <div key={index} className="Info">
                   <p>{item.name} </p>
-                  <p>{item.amount} €</p>
+                  <p>
+                    {new Intl.NumberFormat("de-DE", {
+                      style: "currency",
+                      currency: "EUR"
+                    }).format(item.amount)}{" "}
+                  </p>
                 </div>
               );
             })}
