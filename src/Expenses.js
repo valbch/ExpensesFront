@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+// import Amount from "./Amount";
 
 class Expenses extends React.Component {
   state = {
@@ -20,7 +21,7 @@ class Expenses extends React.Component {
   };
 
   render = () => {
-    // let sum = 0;
+    let sum = 0;
     return (
       <div className="Case">
         <h2 className="Title">Expenses</h2>
@@ -49,15 +50,16 @@ class Expenses extends React.Component {
         </div>
         <div className="lignTotal">
           <p>TOTAL</p>
+          <p>{sum}</p>
 
-          {/* {this.state.data &&
+          {this.state.data &&
             this.state.data.map((item, index) => {
               return (
                 <div key={index}>
                   <div>{(sum = sum + item.amount)}</div>
                 </div>
               );
-            })} */}
+            })}
         </div>
       </div>
     );

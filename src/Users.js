@@ -1,10 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-// A Faire:
-
-// mettre une condition = si le name existe déja alors n'affiche rien.
-
 class Users extends React.Component {
   state = {
     name: "Mary",
@@ -33,9 +29,6 @@ class Users extends React.Component {
 
           {this.state.data &&
             this.state.data.map((item, index) => {
-              // return this.state.users === item.users ? (
-              //   <p>{item.name}</p>
-              // ) : null;
               return (
                 <div key={index} className="Info">
                   <p>{item.name} </p>

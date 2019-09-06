@@ -35,7 +35,7 @@ class FormHome extends React.Component {
         <div className="CaseHome">
           <h2 className="Title">New expense</h2>
           <form onSubmit={this.onSubmit} className="Form">
-            <input className="Input" placeholder="New user" />
+            <input className="Input" placeholder="New user" disabled />
 
             <input
               className="Input"
